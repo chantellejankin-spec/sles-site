@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+const base = import.meta.env.BASE_URL;
+
+const objectives = [
+  'Support, finance and marketing systems for women in rural agriculture and horticulture in the Western Area of Sierra Leone.',
+  'Create green spaces in urban areas of Freetown and surrounding towns.',
+  'Run training and awareness campaigns for women on conservation methods, water management, irrigation systems and storage facilities.',
+  'Support child welfare and education, youth employment, training, advocacy, business start-up and entrepreneurship.',
+  'Carry out reforestation and restoration of mangrove trees in the Western Rural District, using GPS/GIS techniques.',
+  'Advocate for and support the use of green energy, energy-saving methods and related business creation.',
+  'Conduct research, data acquisition and consultancy to improve healthcare, education, water and sanitation.',
+  'Empower women and girls in STEM (science, technology, engineering and mathematics), including job placement and business development.',
+];
+
+const trustPoints = [
+  { icon: 'shield', title: 'Legally registered & government-aligned', text: 'Operating since 2023 with Freetown City Council registration and active collaboration with EPA-SL and FCC.' },
+  { icon: 'award', title: 'Proven community delivery', text: 'Successful campaigns and clean-ups in Bololo and Kroo Bay, with measurable community turnout.' },
+  { icon: 'gear', title: 'Technical capacity', text: 'An engineering background combined with international technical support from COLEAD, Belgium.' },
+  { icon: 'sprout', title: 'Livelihood focus', text: 'Direct experience training women farmers in organic production, agroforestry and group marketing.' },
+  { icon: 'handshake', title: 'Partnership approach', text: 'We co-implement with government, councils and international partners rather than working alone.' },
+];
+
+const team = [
+  { name: 'Ishmael Faye', role: 'Chairman' },
+  { name: 'Elizabetta Fierro', role: 'Team member' },
+  { name: 'Alhaji Sesay', role: 'Team member' },
+  { name: 'Mohamed El Abouch', role: 'Team member' },
+  { name: 'Kandeh Turay', role: 'Team member' },
+];
+---
+
+<Layout
+  title="About"
+  description="SLES.CSO: legal status, mission, objectives, leadership and partnerships of Sierra Leone Engineering Solutions, a registered community-based organization in Freetown."
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow reveal">About us</p>
+      <h1 class="reveal">A registered, community-based organization working across Sierra Leone</h1>
+      <p class="lede reveal">
+        Founded in Freetown in 2023, SLES.CSO is a non-profit community-based
+        organization delivering social and engineering services to improve
+        standards of living and reduce poverty and inequality, in compliance
+        with the UN Sustainable Development Goals, by 2035.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="card-grid cols-2 reveal">
+        <div class="card">
+          <div class="card-head">
+            <Icon name="award" />
+            <h3>Legal status</h3>
+          </div>
+          <p>Founded 28 April 2023. Registered Community-Based/Non-Governmental Organization.</p>
+          <p>Registration No. 101207/2023</p>
+          <p>Freetown City Council Registration: Receipt No. 0050673</p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <Icon name="pin" />
+            <h3>Where we work</h3>
+          </div>
+          <p>
+            Based in Freetown, Western Area, Sierra Leone. Our programmes
+            reach communities across the Western Area Urban and Rural
+            Districts, with ongoing work extending to Tonkolili and Port
+            Loko Districts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Our mission & objectives</p>
+        <h2>Eight commitments guiding our work</h2>
+      </div>
+      <ol class="objective-list reveal">
+        {objectives.map((obj, i) => (
+          <li>
+            <span class="num">{i + 1}</span>
+            <p>{obj}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Why partners work with us</p>
+        <h2>Built on field experience and partnership</h2>
+      </div>
+      <div class="card-grid reveal">
+        {trustPoints.map((item) => (
+          <div class="card">
+            <div class="card-head">
+              <Icon name={item.icon} />
+              <h3>{item.title}</h3>
+            </div>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Leadership & team</p>
+        <h2>Who runs SLES.CSO</h2>
+      </div>
+      <div class="card-grid reveal">
+        {team.map((member) => (
+          <div class="card team-card">
+            <span class="role">{member.role}</span>
+            <h3>{member.name}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="panel forest reveal">
+        <h2>Interested in working together?</h2>
+        <p>
+          We welcome conversations with funders, government bodies and
+          international organizations about engineering, climate resilience
+          and community development work in Sierra Leone.
+        </p>
+        <a class="pill-btn solid-on-dark" href={`${base}contact`}>Contact Us</a>
+      </div>
+    </div>
+  </section>
+</Layout>

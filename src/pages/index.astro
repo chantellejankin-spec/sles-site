@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+const base = import.meta.env.BASE_URL;
+
+const focusAreas = [
+  { icon: 'sprout', title: 'Women in Agriculture', text: 'Finance, marketing systems and market linkages for women in rural agriculture and horticulture across the Western Area.' },
+  { icon: 'tree', title: 'Green Spaces & Reforestation', text: 'Urban green spaces for Freetown and tree planting and mangrove restoration in the Western Rural District, mapped with GPS/GIS.' },
+  { icon: 'droplet', title: 'Water & Conservation Training', text: 'Awareness and training for women on conservation methods, water management, irrigation and storage facilities.' },
+  { icon: 'book', title: 'Youth & Education', text: 'Child welfare, early education, youth employment, entrepreneurship and business start-up support.' },
+  { icon: 'bolt', title: 'Green Energy', text: 'Advocacy and business creation around renewable energy, energy saving methods and off-grid power.' },
+  { icon: 'chart', title: 'Research & Data', text: 'Research, data acquisition, project design and consultancy to improve healthcare, water and sanitation.' },
+  { icon: 'users', title: 'Women & Girls in STEM', text: 'Empowerment of women and girls in science, technology, engineering and mathematics, with job placement support.' },
+  { icon: 'recycle', title: 'Waste & Sanitation', text: 'Community-based waste collection, plastic recycling and sanitation clean-ups in partnership with public authorities.' },
+];
+
+const timeline = [
+  { year: '2023', title: 'Flood Mitigation & WASH Campaign', text: 'Led a public campaign and community sensitization on flood mitigation and WASH in Bololo Community, Freetown, reaching over 300 residents and resulting in community drainage action plans.' },
+  { year: '2024', title: 'Urban Sanitation & Drainage', text: 'Members and volunteers carried out a major cleaning exercise of the drainage system in Kroo Bay Community, reducing flood risk through direct community mobilization.' },
+  { year: '2025–26', title: 'Waste Management & Recycling Partnership', text: 'Formed a strategic partnership with Freetown City Council and the Environmental Protection Agency Sierra Leone for waste management and plastic recycling across the Western Area Urban and Rural Districts.' },
+];
+
+const partners = [
+  'COLEAD (Belgium)',
+  'Freetown City Council',
+  'Environmental Protection Agency Sierra Leone',
+  'Ministry of Fisheries and Marine Resources',
+  'National Protected Area Authority',
+  'Statistics Sierra Leone',
+];
+---
+
+<Layout
+  title="Home"
+  description="Sierra Leone Engineering Solutions (SLES.CSO) delivers practical engineering, climate resilience and community development programmes in Freetown and across Sierra Leone."
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow reveal">Freetown, Western Area, Sierra Leone</p>
+      <h1 class="reveal">Practical engineering and community-led solutions for Sierra Leone</h1>
+      <p class="lede reveal">
+        Sierra Leone Engineering Solutions CSO is a registered community-based
+        organization delivering engineering, climate resilience and
+        livelihood programmes that improve standards of living and reduce
+        poverty and inequality, in line with the UN Sustainable Development
+        Goals.
+      </p>
+      <div class="hero-cta reveal">
+        <a class="pill-btn solid-on-dark" href={`${base}work`}>See Our Work</a>
+        <a class="pill-btn outline on-dark" href={`${base}contact`}>Partner With Us</a>
+      </div>
+
+      <div class="fact-row reveal">
+        <div class="fact">
+          <Icon name="award" variant="inverse" />
+          <div>
+            <p class="fact-title">Registered since 2023</p>
+            <p class="fact-note">Freetown City Council Reg. No. 101207/2023</p>
+          </div>
+        </div>
+        <div class="fact">
+          <Icon name="map" variant="inverse" />
+          <div>
+            <p class="fact-title">Based in Freetown</p>
+            <p class="fact-note">Working across the Western Area and beyond</p>
+          </div>
+        </div>
+        <div class="fact">
+          <Icon name="handshake" variant="inverse" />
+          <div>
+            <p class="fact-title">Partnership-led</p>
+            <p class="fact-note">Co-implementing with government, councils and international partners</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Who we are</p>
+        <h2>Engineering solutions, built with communities</h2>
+      </div>
+      <p class="reveal" style="max-width: 760px;">
+        SLES.CSO was founded on 28 April 2023 and is based in Freetown,
+        Western Area. Our mandate is to deliver practical engineering,
+        climate resilience and community development solutions across
+        Sierra Leone, aspiring to reduce poverty and inequality in the
+        country by 2035.
+      </p>
+      <p class="reveal" style="max-width: 760px;">
+        We work directly alongside the communities our programmes serve,
+        combining an engineering background with hands-on field experience
+        in sanitation, agriculture and natural resource management. We do
+        not work in isolation: every programme is co-implemented with
+        government institutions, local councils and international technical
+        partners.
+      </p>
+      <p class="reveal">
+        <a class="text-link" href={`${base}about`}>Read more about our mission and team &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">What we do</p>
+        <h2>Eight focus areas, one goal</h2>
+      </div>
+      <div class="card-grid reveal">
+        {focusAreas.map((item) => (
+          <div class="card">
+            <div class="card-head">
+              <Icon name={item.icon} />
+              <h3>{item.title}</h3>
+            </div>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Track record</p>
+        <h2>Field experience since 2023</h2>
+      </div>
+      <div class="timeline reveal">
+        {timeline.map((item) => (
+          <div class="timeline-item">
+            <p class="year">{item.year}</p>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Partnerships & alignment</p>
+        <h2>We work alongside government and technical partners</h2>
+      </div>
+      <p class="reveal" style="max-width: 760px;">
+        COLEAD (Belgium) is our major technical partner, supporting value
+        chain development and horticultural best practice. We are also
+        advancing project management and implementation partnerships with
+        key government institutions.
+      </p>
+      <div class="chip-row reveal">
+        {partners.map((p) => (
+          <span class="chip"><Icon name="building" variant="plain" size={16} />{p}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="panel forest reveal">
+        <h2>Work with us</h2>
+        <p>
+          We are positioned to manage donor funds responsibly and deliver
+          tangible, community-owned results. If you are a funder, government
+          partner or international organization looking to collaborate on
+          engineering, climate resilience or community development work in
+          Sierra Leone, we would like to hear from you.
+        </p>
+        <a class="pill-btn solid-on-dark" href={`${base}contact`}>Get in Touch</a>
+      </div>
+    </div>
+  </section>
+</Layout>

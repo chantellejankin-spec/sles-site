@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+const base = import.meta.env.BASE_URL;
+
+const programmes = [
+  {
+    icon: 'recycle',
+    title: 'Waste & Circular Economy',
+    text: 'Community-based waste collection, plastic recycling and septic services that tackle urban sanitation, developed in partnership with Freetown City Council and the Environmental Protection Agency Sierra Leone.',
+  },
+  {
+    icon: 'tree',
+    title: 'Coastal & Mangrove Resilience',
+    text: 'Mangrove restoration and beekeeping as an alternative income source for coastal communities, aligned with the Ministry of Fisheries and Marine Resources and the National Protected Area Authority.',
+  },
+  {
+    icon: 'droplet',
+    title: 'Water, Sanitation & Flood Resilience',
+    text: 'Flood mitigation campaigns, drainage management and safe water access for communities most exposed to flooding and water-borne disease.',
+  },
+  {
+    icon: 'sprout',
+    title: 'Agriculture & Value Addition',
+    text: 'Support for women farmers in organic growing techniques, agroforestry and market linkages, including processing local produce such as mango into higher-value products.',
+  },
+  {
+    icon: 'fish',
+    title: 'Fisheries & Coastal Livelihoods',
+    text: 'Safety, cold-chain and cooperative services for artisanal fishing communities, reducing post-harvest loss and improving income for fishers and fishmongers.',
+  },
+  {
+    icon: 'bolt',
+    title: 'Green Energy & Climate',
+    text: 'Advocacy and small-scale renewable energy pilots bringing off-grid power to underserved districts, alongside energy-saving business development.',
+  },
+  {
+    icon: 'book',
+    title: 'Youth, Education & STEM',
+    text: 'Training, entrepreneurship support and job placement for young people, with a particular focus on women and girls in science, technology, engineering and mathematics.',
+  },
+];
+---
+
+<Layout
+  title="Our Work"
+  description="SLES.CSO programme areas: waste and circular economy, mangrove and coastal resilience, water and sanitation, agriculture, fisheries, green energy, and youth and STEM in Sierra Leone."
+>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow reveal">Our work</p>
+      <h1 class="reveal">Programmes rooted in engineering and community ownership</h1>
+      <p class="lede reveal">
+        Each programme area combines our technical and engineering
+        background with direct community involvement. We train local
+        committees and cooperatives, work alongside government partners, and
+        design programmes for communities to run and own over time.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="card-grid reveal">
+        {programmes.map((item) => (
+          <div class="card">
+            <div class="card-head">
+              <Icon name={item.icon} />
+              <h3>{item.title}</h3>
+            </div>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">How we work</p>
+        <h2>From engineering plan to community-run programme</h2>
+      </div>
+      <div class="card-grid cols-2 reveal">
+        <div class="card">
+          <div class="card-head">
+            <Icon name="handshake" />
+            <h3>Co-implementation</h3>
+          </div>
+          <p>
+            We design and deliver programmes jointly with government
+            institutions, local councils and international technical
+            partners, rather than running projects on our own.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <Icon name="users" />
+            <h3>Community ownership</h3>
+          </div>
+          <p>
+            Where possible, assets and operations are handed over to trained
+            local cooperatives and committees so that communities continue
+            to benefit after our direct involvement ends.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <Icon name="chart" />
+            <h3>Data and monitoring</h3>
+          </div>
+          <p>
+            We use GPS/GIS mapping, baseline surveys and ongoing monitoring
+            to track progress and report results to partners and funders.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <Icon name="gear" />
+            <h3>Technical training</h3>
+          </div>
+          <p>
+            Every programme includes hands-on training, whether in organic
+            farming, mangrove restoration, waste management or safety at
+            sea, so skills remain in the community.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="panel forest reveal">
+        <h2>Partner with us on a programme</h2>
+        <p>
+          We work with funders, government institutions and international
+          organizations to design and deliver programmes across these focus
+          areas. Get in touch to discuss a potential partnership.
+        </p>
+        <a class="pill-btn solid-on-dark" href={`${base}contact`}>Contact Us</a>
+      </div>
+    </div>
+  </section>
+</Layout>

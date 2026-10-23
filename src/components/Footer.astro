@@ -1,0 +1,76 @@
+---
+const year = new Date().getFullYear();
+const base = import.meta.env.BASE_URL;
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <p class="brand">Sierra Leone Engineering Solutions</p>
+      <p class="parent">Registered Community-Based Organization, Freetown</p>
+    </div>
+    <nav>
+      <a href={`${base}about`}>About</a>
+      <a href={`${base}work`}>Our Work</a>
+      <a href={`${base}contact`}>Contact</a>
+    </nav>
+    <div class="footer-address">
+      <p>20 Liverpool Street, Freetown, Sierra Leone</p>
+      <p><a href="mailto:sierraleoneengineeringsolution@gmail.com">sierraleoneengineeringsolution@gmail.com</a></p>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="copy">&copy; {year} Sierra Leone Engineering Solutions CSO. Reg. No. 101207/2023.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 2.5rem 0 1.5rem;
+    font-size: 0.85rem;
+    background: var(--sand-pale);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 3rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+  }
+
+  .brand {
+    margin: 0 0 0.2em;
+    font-weight: 800;
+    color: var(--forest);
+  }
+
+  .parent {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-weight: 700;
+  }
+
+  .footer-address p {
+    margin: 0 0 0.3em;
+  }
+
+  .footer-address a {
+    color: var(--forest);
+    font-weight: 700;
+  }
+
+  .copy {
+    margin: 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+  }
+</style>
