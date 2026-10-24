@@ -100,8 +100,9 @@ const team = [
         <h2>Built on field experience and partnership</h2>
       </div>
       <div class="card-grid reveal">
-        {trustPoints.map((item) => (
+        {trustPoints.map((item, i) => (
           <div class="card">
+            <span class="card-num">{String(i + 1).padStart(2, '0')}</span>
             <div class="card-head">
               <Icon name={item.icon} />
               <h3>{item.title}</h3>

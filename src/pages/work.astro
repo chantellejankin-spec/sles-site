@@ -62,8 +62,9 @@ const programmes = [
   <section class="section">
     <div class="wrap">
       <div class="card-grid reveal">
-        {programmes.map((item) => (
+        {programmes.map((item, i) => (
           <div class="card">
+            <span class="card-num">{String(i + 1).padStart(2, '0')}</span>
             <div class="card-head">
               <Icon name={item.icon} />
               <h3>{item.title}</h3>

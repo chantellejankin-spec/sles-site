@@ -110,8 +110,9 @@ const partners = [
         <h2>Eight focus areas, one goal</h2>
       </div>
       <div class="card-grid reveal">
-        {focusAreas.map((item) => (
+        {focusAreas.map((item, i) => (
           <div class="card">
+            <span class="card-num">{String(i + 1).padStart(2, '0')}</span>
             <div class="card-head">
               <Icon name={item.icon} />
               <h3>{item.title}</h3>
