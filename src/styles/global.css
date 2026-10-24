@@ -434,6 +434,12 @@ a {
   text-align: left;
 }
 
+.team-card h3.placeholder {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
 .team-card .role {
   color: var(--forest);
   font-weight: 700;

@@ -24,10 +24,10 @@ const trustPoints = [
 
 const team = [
   { name: 'Ishmael Faye', role: 'Chairman' },
-  { name: 'Elizabetta Fierro', role: 'Team member' },
-  { name: 'Alhaji Sesay', role: 'Team member' },
-  { name: 'Mohamed El Abouch', role: 'Team member' },
-  { name: 'Kandeh Turay', role: 'Team member' },
+  { name: 'Name to be confirmed', role: 'Team member', placeholder: true },
+  { name: 'Name to be confirmed', role: 'Team member', placeholder: true },
+  { name: 'Name to be confirmed', role: 'Team member', placeholder: true },
+  { name: 'Name to be confirmed', role: 'Team member', placeholder: true },
 ];
 ---
 
@@ -124,7 +124,7 @@ const team = [
         {team.map((member) => (
           <div class="card team-card">
             <span class="role">{member.role}</span>
-            <h3>{member.name}</h3>
+            <h3 class={member.placeholder ? 'placeholder' : ''}>{member.name}</h3>
           </div>
         ))}
       </div>
