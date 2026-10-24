@@ -3,7 +3,7 @@
 :root {
   --forest: #1d5b43;
   --forest-dark: #123c2c;
-  --ochre: #c9862c;
+  --accent: #2b6cb0;
   --sand: #efe3c8;
   --sand-pale: #faf6ea;
   --ink: #1c2420;
@@ -258,7 +258,7 @@ a {
 .card {
   position: relative;
   border: 1px solid var(--line);
-  border-left: 3px solid var(--ochre);
+  border-left: 3px solid var(--accent);
   border-radius: 2px;
   padding: 1.75rem 1.75rem 1.75rem 1.6rem;
   background: var(--paper);
@@ -278,7 +278,7 @@ a {
   font-family: var(--mono);
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--ochre);
+  color: var(--accent);
   letter-spacing: 0.03em;
 }
 
@@ -293,7 +293,7 @@ a {
 .panel {
   background: var(--sand-pale);
   border: 1px solid var(--sand);
-  border-top: 3px solid var(--ochre);
+  border-top: 3px solid var(--accent);
   border-radius: 2px;
   padding: clamp(1.5rem, 3vw, 2.25rem);
 }
@@ -420,7 +420,7 @@ a {
   align-items: center;
   gap: 0.5rem;
   border: 1px solid var(--line);
-  border-left: 2px solid var(--ochre);
+  border-left: 2px solid var(--accent);
   border-radius: 2px;
   padding: 0.55em 1.1em;
   font-size: 0.85rem;
