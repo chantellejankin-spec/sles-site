@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
-  --forest: #1f7a63;
-  --forest-dark: #154f3f;
-  --accent: #1b7f94;
+  --forest: #008b8b;
+  --forest-dark: #006666;
+  --accent: #00f5ff;
   --sand: #efe3c8;
   --sand-pale: #faf6ea;
   --ink: #1c2420;
@@ -199,7 +199,7 @@ a {
 .hero .lede {
   max-width: 680px;
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-  color: rgba(253, 252, 248, 0.92);
+  color: rgba(255, 255, 255, 0.97);
 }
 
 .hero .eyebrow {
@@ -235,7 +235,7 @@ a {
 
 .fact-row .fact-note {
   font-size: 0.88rem;
-  color: rgba(253, 252, 248, 0.85);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 760px) {
