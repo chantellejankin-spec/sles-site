@@ -1,9 +1,8 @@
 import { defineConfig } from 'astro/config';
 
-// No custom domain registered yet, so this deploys to the default
-// GitHub Pages project URL. Once a domain is bought, add public/CNAME,
-// switch `site` to the custom domain, and drop `base`.
+// Custom domain: www.sles-cso.com (set as the custom domain in the
+// GitHub Pages settings via public/CNAME). DNS at GoDaddy points the
+// apex and www to GitHub Pages, same pattern as her other sites.
 export default defineConfig({
-  site: 'https://chantellejankin-spec.github.io',
-  base: '/sles-site/',
+  site: 'https://www.sles-cso.com',
 });
