@@ -115,7 +115,7 @@ a {
   z-index: -1;
   inset: 2px;
   background: var(--btn-fill);
-  clip-path: polygon(0 0, calc(100% - (var(--notch) - 4px)) 0, 100% calc(var(--notch) - 4px), 100% 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - (var(--notch) - 6.83px)) 0, 100% calc(var(--notch) - 6.83px), 100% 100%, 0 100%);
   transition: background 0.15s ease;
 }
 
