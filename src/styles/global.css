@@ -5,11 +5,11 @@
   --forest-dark: #001f4d;
   --accent: #9bcb16;
   --logo-green: #9bcb16;
-  --sand: #efe3c8;
-  --sand-pale: #faf6ea;
+  --sand: #e5e1d6;
+  --sand-pale: #f6f4ee;
   --ink: #1c2420;
   --ink-soft: #46524b;
-  --paper: #fdfcf8;
+  --paper: #fcfbf8;
   --line: rgba(28, 36, 32, 0.14);
   --max-w: 1160px;
   --gap: clamp(1.5rem, 4vw, 3rem);
