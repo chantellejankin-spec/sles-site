@@ -79,11 +79,23 @@ a {
   margin-bottom: 0.9em;
 }
 
+/*
+  Notched buttons are built as two stacked, independently clipped shapes
+  (the element itself + ::before, inset by the border width) rather than
+  a CSS `border` on a clipped box. A `border` only draws along the box's
+  original rectangular edges, so clip-path cuts it short at the diagonal
+  notch with no stroke across that cut, leaving a visible gap on outline
+  variants. Stacking two filled polygons gives a true frame that includes
+  the diagonal on every variant.
+*/
 .pill-btn {
+  --btn-frame: var(--forest);
+  --btn-fill: var(--forest);
+  position: relative;
+  isolation: isolate;
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  border: 2px solid var(--forest);
   border-radius: 3px;
   clip-path: polygon(0 0, calc(100% - var(--notch)) 0, 100% var(--notch), 100% 100%, 0 100%);
   padding: 0.75em 1.75em;
@@ -92,13 +104,24 @@ a {
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  background: var(--forest);
+  background: var(--btn-frame);
   color: var(--paper);
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.pill-btn::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 2px;
+  background: var(--btn-fill);
+  clip-path: polygon(0 0, calc(100% - (var(--notch) - 4px)) 0, 100% calc(var(--notch) - 4px), 100% 100%, 0 100%);
+  transition: background 0.15s ease;
 }
 
 .pill-btn::after {
   content: '→';
+  position: relative;
   font-family: Arial, sans-serif;
   transition: transform 0.15s ease;
 }
@@ -108,40 +131,42 @@ a {
 }
 
 .pill-btn:hover {
-  background: var(--forest-dark);
-  border-color: var(--forest-dark);
+  --btn-frame: var(--forest-dark);
+  --btn-fill: var(--forest-dark);
 }
 
 .pill-btn.outline {
-  background: transparent;
-  border-color: var(--forest);
+  --btn-fill: var(--paper);
   color: var(--forest);
 }
 
 .pill-btn.outline:hover {
-  background: var(--forest);
+  --btn-frame: var(--forest);
+  --btn-fill: var(--forest);
   color: var(--paper);
 }
 
 .pill-btn.outline.on-dark {
-  border-color: rgba(253, 252, 248, 0.7);
+  --btn-frame: rgba(253, 252, 248, 0.7);
+  --btn-fill: var(--forest);
   color: var(--paper);
 }
 
 .pill-btn.outline.on-dark:hover {
-  background: rgba(253, 252, 248, 0.12);
-  border-color: var(--paper);
+  --btn-frame: var(--paper);
+  --btn-fill: #0a3d82;
+  color: var(--paper);
 }
 
 .pill-btn.solid-on-dark {
-  background: var(--sand-pale);
-  border-color: var(--sand-pale);
+  --btn-frame: var(--sand-pale);
+  --btn-fill: var(--sand-pale);
   color: var(--forest-dark);
 }
 
 .pill-btn.solid-on-dark:hover {
-  background: #fff;
-  border-color: #fff;
+  --btn-frame: #fff;
+  --btn-fill: #fff;
 }
 
 .text-link {
